@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+
+      body {
+
+        background-color: rgb(213, 242, 255);
+
+        align-items: center;
+
+        display: flex;
+
+        flex-direction: column;
+
+      }
+
+
+
+      * {
+
+        margin: 0px;
+
+        padding: 0px;
+
+        box-sizing: border-box;
+
+      }
+
+
+
+      h1 {
+
+        margin: 10px auto;
+
+      }
+
+
+
+      #add {
+
+        font-size: 40px;
+
+        width: 40px;
+
+        height: 40px;
+
+        line-height: 40px;
+
+        text-align: center;
+
+        border-radius: 5px;
+
+        background-color: rgb(185, 255, 232);
+
+        transition: 0.5s;
+
+      }
+
+
+
+      #add1 {
+
+        display: inline-block;
+
+        font-size: 40px;
+
+        width: 40px;
+
+        height: 40px;
+
+        line-height: 40px;
+
+        text-align: center;
+
+        border-radius: 5px;
+
+        background-color: rgb(185, 255, 232);
+
+        transition: 0.5s;
+
+      }
+
+
+
+      #add:hover {
+
+        background-color: rgb(0, 199, 133);
+
+        border: 2px solid blue;
+
+      }
+
+
+
+      #add1:hover {
+
+        background-color: rgb(0, 199, 133);
+
+        border: 2px solid blue;
+
+      }
+
+
+
+      .textCenter {
+
+        text-align: center;
+
+      }
+
+
+
+      .hidden {
+
+        visibility: hidden;
+
+      }
+
+
+
+      .logo {
+
+        border-radius: 50%;
+
+        height: 65px;
+
+        width: 65px;
+
+        margin: auto 50px;
+
+      }
+
+
+
+      header {
+
+        background-color: rgb(87, 182, 219);
+
+        color: rgb(102, 255, 0);
+
+        height: 80px;
+
+        width: 100%;
+
+        position: sticky;
+
+        top: 0px;
+
+        transition: 2s;
+
+        margin-bottom: 10px;
+
+      }
+
+
+
+      header:hover {
+
+        background-color: rgb(0, 134, 187);
+
+      }
+
+
+
+      nav {
+
+        height: 100%;
+
+        display: flex;
+
+        justify-content: space-between;
+
+      }
+
+
+
+      .nav-links {
+
+        margin: auto;
+
+        display: inline-block;
+
+        text-align: center;
+
+      }
+
+
+
+      .nav-links > ul > li:hover {
+
+        color: rgb(0, 173, 116);
+
+        border-radius: 20px;
+
+        border: 2px solid blue;
+
+        font-size: 20px;
+
+        background-color: rgb(255, 255, 255);
+
+      }
+
+
+
+      .nav-links > ul > li {
+
+        margin: 5px;
+
+        width: 120px;
+
+        height: 35px;
+
+        line-height: 35px;
+
+        box-sizing: border-box;
+
+        transition: 0.5s;
+
+      }
+
+
+
+      .nav-links > ul {
+
+        display: flex;
+
+        list-style: none;
+
+        height: 60px;
+
+        align-items: center;
+
+      }
+
+
+
+      .search {
+
+        margin: auto;
+
+      }
+
+
+
+      .search > input {
+
+        width: 150px;
+
+        height: 30px;
+
+        border-radius: 5px;
+
+        text-align: center;
+
+        border: 2px solid rgb(6, 255, 172);
+
+      }
+
+
+
+      .search > button {
+
+        width: 100px;
+
+        height: 30px;
+
+        border-radius: 5px;
+
+        background-color: rgb(185, 255, 232);
+
+        transition: 0.5s;
+
+      }
+
+
+
+      .search > button:hover {
+
+        background-color: rgb(0, 199, 133);
+
+        border: 2px solid blue;
+
+      }
+
+
+
+      main {
+
+        margin: 20px;
+
+        min-height: 50vh;
+
+        padding: 20px;
+
+        border: 2px solid grey;
+
+        border-radius: 20px;
+
+        background-color: rgb(205, 236, 250);
+
+        transition: background-color 2s;
+
+      }
+
+
+
+      main:hover {
+
+        background-color: rgb(178, 233, 255);
+
+      }
+
+
+
+      table {
+
+        margin: auto;
+
+        border-spacing: 10px;
+
+        text-align: center;
+
+      }
+
+
+
+      th,
+
+      td {
+
+        padding: 5px;
+
+      }
+
+
+
+      thead {
+
+        background-color: slategray;
+
+        height: 40px;
+
+      }
+
+
+
+      tbody {
+
+        min-height: 30px;
+
+        background-color: rgb(213, 219, 224);
+
+      }
+
+
+
+      .button {
+
+        width: 100px;
+
+        height: 30px;
+
+        border-radius: 5px;
+
+        background-color: rgb(185, 255, 232);
+
+        transition: background-color 1s, border 0.5s;
+
+      }
+
+
+
+      .button:hover {
+
+        background-color: rgb(0, 199, 133);
+
+        border: 2px solid blue;
+
+      }
+
+
+
+      .description {
+
+        min-width: 200px;
+
+      }
+
+
+
+      .title {
+
+        min-width: 150px;
+
+      }
+
+
+
+      #popup {
+
+        transition: 1s;
+
+        transform: translate(-50%, 50%);
+
+        height: 500px;
+
+        width: 500px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border: 2px solid green;
+
+        border-radius: 10px;
+
+        background-color: aliceblue;
+
+        z-index: 100;
+
+      }
+
+
+
+      #key {
+
+        margin: 20px auto;
+
+        min-width: 80%;
+
+        height: 30px;
+
+      }
+
+
+
+      #value {
+
+        margin: 20px auto;
+
+        min-width: 80%;
+
+      }
+
+
+
+      #blur {
+
+        transition: 0.5s;
+
+        background-color: rgba(0, 0, 0, 0.479);
+
+        width: 100vw;
+
+        height: 100vh;
+
+        position: fixed;
+
+        top: 0px;
+
+        left: 0px;
+
+      }
+
+
+
+      .hideBlur {
+
+        visibility: hidden;
+
+      }
+
+
+
+      .hidePopup {
+
+        visibility: hidden;
+
+        position: fixed;
+
+        top: -150%;
+
+        left: 50%;
+
+      }
+
+
+
+      .showBlur {
+
+        visibility: visible;
+
+      }
+
+
+
+      .showPopup {
+
+        visibility: visible;
+
+        position: fixed;
+
+        top: -25%;
+
+        left: 50%;
+
+      }
+
+
+
+      #close {
+
+        position: absolute;
+
+        top: 0px;
+
+        right: 0px;
+
+        margin: 10px;
+
+        text-align: center;
+
+        width: 25px;
+
+        height: 25px;
+
+        background-color: red;
+
+        border: 2px solid greenyellow;
+
+      }
+
+
+
+      footer {
+
+        height: 50px;
+
+        width: 100%;
+
+        background-color: rgb(87, 182, 219);
+
+        color: white;
+
+        text-align: center;
+
+        transition: 2s;
+
+      }
+
+      footer:hover {
+
+        background-color: rgb(0, 134, 187);
+
+      }
+
+    </style>
+
+    <title>Document</title>
+
+  </head>
+
+
+
+  <body>
+
+    <header>
+
+      <nav>
+
+        <img class="logo" src="./logo.png" alt="logo" />
+
+        <div class="nav-links">
+
+          <ul>
+
+            <li>Home</li>
+
+            <li>Services</li>
+
+            <li>Contact Us</li>
+
+            <li>About</li>
+
+          </ul>
+
+        </div>
+
+        <div class="search">
+
+          <input type="text" placeholder="Type here to search" />
+
+          <button>Search</button>
+
+        </div>
+
+      </nav>
+
+    </header>
+
+
+
+    <h1>TAKE YOUR NOTES HERE</h1>
+
+
+
+    <div id="add">+</div>
+
+
+
+    <main>
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>S.NO.</th>
+
+            <th class="title">Title</th>
+
+            <th class="description">Description</th>
+
+            <th>Update</th>
+
+            <th>Delete</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="tbody"></tbody>
+
+      </table>
+
+      <div id="popup" class="hidePopup">
+
+        <span id="close">&cross;</span>
+
+        <div>Title</div>
+
+        <input type="text" id="key" /><br />
+
+        <div>Description</div>
+
+        <textarea name="" id="value" cols="30" rows="10"></textarea>
+
+        <button id="save" class="button">Save Note</button>
+
+      </div>
+
+      <div id="blur" class="hideBlur"></div>
+
+      <div id="empty" class="hidden">
+
+        ADD SOME NOTES BY CLICKING ON<br /><br /><span id="add1">+</span>
+
+      </div>
+
+    </main>
+
+
+
+    <footer>This is footer</footer>
+
+
+
+    <script>
+
+        /*
+
+##################################################
+
+variables
+
+##################################################
+
+*/
+
+
+
+let okeys = "";
+
+let tbody = document.getElementById("tbody");
+
+let lkeys = Object.keys(localStorage);
+
+lkeys
+
+  .sort(function (a, b) {
+
+    return a - b;
+
+  })
+
+  .reverse();
+
+let edit = document.getElementsByClassName("edit");
+
+let del = document.getElementsByClassName("delete");
+
+
+
+/*
+
+##################################################
+
+functions
+
+##################################################
+
+*/
+
+
+
+function showModal() {
+
+  document.getElementById("blur").classList.add("showBlur");
+
+  document.getElementById("blur").classList.remove("hideBlur");
+
+  document.getElementById("popup").classList.add("showPopup");
+
+  document.getElementById("popup").classList.remove("hidePopup");
+
+}
+
+function hideModal() {
+
+  document.getElementById("blur").classList.remove("showBlur");
+
+  document.getElementById("blur").classList.add("hideBlur");
+
+  document.getElementById("popup").classList.remove("showPopup");
+
+  document.getElementById("popup").classList.add("hidePopup");
+
+}
+
+
+
+function saveNote(key, value) {
+
+  localStorage.setItem(key, value);
+
+  if (okeys !==''){
+
+    localStorage.removeItem(okeys);
+
+  }
+
+  location.reload();
+
+}
+
+
+
+function deleteNote(key) {
+
+  localStorage.removeItem(key);
+
+  location.reload();
+
+}
+
+
+
+/*
+
+##################################################
+
+populating the DOM
+
+##################################################
+
+*/
+
+
+
+if (localStorage.length) {
+
+  for (let i = 0; i < localStorage.length; i++) {
+
+    let temp = document.createElement("tr");
+
+    temp.innerHTML = `<td>1</td>
+
+  <td class="title">
+
+  ${JSON.parse(localStorage.getItem(lkeys[i])).title}</td>
+
+  <td class="description">
+
+  ${JSON.parse(localStorage.getItem(lkeys[i])).description}
+
+  </td>
+
+  <td id="${lkeys[i]}" class="edit"><button class="button">Edit</button></td>
+
+  <td id="${
+
+    lkeys[i]
+
+  }" class="delete"><button class="button">Delete</button></td>`;
+
+    tbody.appendChild(temp);
+
+  }
+
+}
+
+else{
+
+  table = document.querySelector('table');
+
+  table.style.visibility = 'hidden';
+
+  empty = document.querySelector('#empty');
+
+  empty.style.visibility = 'visible';
+
+  empty.classList.add('textCenter');
+
+}
+
+
+
+/*
+
+##################################################
+
+Adding event listeners
+
+##################################################
+
+*/
+
+
+
+document.getElementById("add").addEventListener("click", function () {
+
+  showModal();
+
+});
+
+document.getElementById("add1").addEventListener("click", function () {
+
+  showModal();
+
+});
+
+
+
+for (let i = 0; i < del.length; i++) {
+
+  del[i].addEventListener("click", function () {
+
+    deleteNote(this.id);
+
+  });
+
+}
+
+
+
+for (let i = 0; i < edit.length; i++) {
+
+  edit[i].addEventListener("click", function () {
+
+    showModal();
+
+    okeys = this.id;
+
+    Obj = JSON.parse(localStorage.getItem(okeys));
+
+    document.getElementById('key').value = Obj.title;
+
+    document.getElementById('value').value = Obj.description;
+
+  });
+
+}
+
+
+
+document.querySelector("#blur").addEventListener("click", function () {
+
+  hideModal();
+
+});
+
+
+
+document.querySelector("#close").addEventListener("click", function () {
+
+  hideModal();
+
+});
+
+
+
+document.querySelector("#save").addEventListener("click", function () {
+
+  let keys = Date.now();
+
+  let t = document.getElementById("key");
+
+  let title = t.value;
+
+  let d = document.getElementById("value");
+
+  let description = d.value;
+
+  let Obj = {
+
+    title: title,
+
+    description: description,
+
+  };
+
+  if (title !== "" || description !== "") {
+
+    saveNote(keys, JSON.stringify(Obj));
+
+  }
+
+  t.value = "";
+
+  d.value = "";
+
+  hideModal();
+
+});
+
+
+
+    </script>
+
+  </body>
+
+</html>
+
